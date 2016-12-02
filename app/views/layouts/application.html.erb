@@ -10,6 +10,9 @@
 
   <body>
   <div class='row'>
+    <% if flash[:success] %>
+        <div class="success"><%= flash[:success] %></div>
+    <% end %>
     <%= yield %>
   </div>
 
