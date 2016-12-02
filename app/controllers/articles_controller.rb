@@ -15,6 +15,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :link)
+    params.require(:article).permit(:title, :body, :link, :cause)
   end
 end
