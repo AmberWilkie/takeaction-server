@@ -1,0 +1,18 @@
+<h2>Add details about the Suggested Actions</h2>
+
+<div class='create_form'>
+
+    <% @article.action_items.each do |item| %>
+      <%= form_for item, url: {action: 'create_actions'} do %>
+      <% case item.action.name %>
+      <% when 'Tweet' %>
+              <h3>Tweet</h3>
+              <%= label_tag :link_to_tweet %><br>
+        <%= text_field_tag :tweet_link %><br>
+              <%= label_tag :sample_tweet_text %><br>
+              <%= text_area_tag :tweet_info %><br>
+      <% end %>
+    <% end %>
+      <%= submit_tag 'Add Suggested Actions' %>
+  <% end %>
+</div>

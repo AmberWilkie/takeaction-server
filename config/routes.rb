@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :articles, controller: :articles, only: [:new, :create]
+  resource :articles, controller: :articles, only: [:new, :create, :update]
 
   root to: 'articles#new'
 

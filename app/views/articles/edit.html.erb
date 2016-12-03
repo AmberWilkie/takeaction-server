@@ -13,8 +13,9 @@
       <%= f.select :cause,  options, class: 'dropdown' %><br>
       <%= f.label :suggested_actions %><br>
       <!--<%= f.collection_check_boxes(:action_ids, @actions, :id, :name) do |b| %>-->
-          <%= b.label("action_id": 'b.value') { b.check_box + b.text } %><br>
+          <%= b.check_box + b.label %><br>
       <!--<% end %>-->
+      <%= hidden_field_tag :article_id, value= @article.id %>
       <%= f.submit "Edit" %>
   <% end %>
 </div>

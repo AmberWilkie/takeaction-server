@@ -8,13 +8,32 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.cause = Cause.find(params[:article][:cause].to_i)
+    params[:article][:action_ids].each do |action|
+      unless action.blank?
+        ActionItem.create(article: @article, action_id: action.to_i)
+      end
+    end
+
     if @article.save
       flash[:success] = 'Item saved.'
+      # binding.pry
+      # render :edit_actions
       gather_form_items
       render :edit
     else
       flash[:error] = 'Item could not be saved.'
       render :new
+    end
+  end
+
+  def update
+    @article = Article.find(params[:article_id].to_i)
+    @article.update(article_params)
+    @article.cause = Cause.find(params[:article][:cause].to_i)
+    if @article.save
+      flash[:success] = 'Your item was updated.'
+      gather_form_items
+      render :edit
     end
   end
 
