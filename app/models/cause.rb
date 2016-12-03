@@ -1,3 +1,3 @@
 class Cause < ApplicationRecord
-  has_one :cause
+  has_many :articles
 end

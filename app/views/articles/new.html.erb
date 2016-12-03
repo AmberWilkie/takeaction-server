@@ -8,6 +8,8 @@
       <%= f.text_area :body, size: "60x12" %><br>
       <%= f.label :link %><br>
       <%= f.text_field :link %><br>
+      <% options = options_from_collection_for_select(@causes, 'id', 'name', 1) %>
+      <%= f.select :cause,  options, class: 'dropdown' %><br>
       <%= f.submit "Create" %>
   <% end %>
 </div>
