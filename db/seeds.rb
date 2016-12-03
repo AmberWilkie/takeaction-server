@@ -9,3 +9,7 @@
 Cause.create(name: 'Poverty')
 Cause.create(name: 'Global Warming')
 Cause.create(name: 'AIDS')
+
+Action.create(name: 'Tweet')
+Action.create(name: 'Volunteer')
+Action.create(name: 'Sign the petition')

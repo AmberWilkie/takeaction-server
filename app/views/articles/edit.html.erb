@@ -1,4 +1,4 @@
-<h2>Create a new story, article or event to publish to users.</h2>
+<h2>Edit your item.</h2>
 
 <div class='create_form'>
   <%= form_for @article, url: {action: 'create'} do |f| %>
@@ -12,9 +12,9 @@
       <% options = options_from_collection_for_select(@causes, 'id', 'name', 1) %>
       <%= f.select :cause,  options, class: 'dropdown' %><br>
       <%= f.label :suggested_actions %><br>
-      <%= f.collection_check_boxes(:action_ids, @actions, :id, :name) do |b| %>
-        <%= b.label("action_id": 'b.value') { b.check_box + b.text } %><br>
-      <% end %>
-      <%= f.submit "Create" %>
+      <!--<%= f.collection_check_boxes(:action_ids, @actions, :id, :name) do |b| %>-->
+          <%= b.label("action_id": 'b.value') { b.check_box + b.text } %><br>
+      <!--<% end %>-->
+      <%= f.submit "Edit" %>
   <% end %>
 </div>

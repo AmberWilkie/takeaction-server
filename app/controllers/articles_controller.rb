@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
+  before_action :gather_form_items, only: [:new, :edit]
 
   def new
     @article = Article.new
-    @causes = Cause.all
   end
 
   def create
@@ -10,7 +10,11 @@ class ArticlesController < ApplicationController
     @article.cause = Cause.find(params[:article][:cause].to_i)
     if @article.save
       flash[:success] = 'Item saved.'
-      redirect_to root_path
+      gather_form_items
+      render :edit
+    else
+      flash[:error] = 'Item could not be saved.'
+      render :new
     end
   end
 
@@ -18,5 +22,10 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :body, :link)
+  end
+
+  def gather_form_items
+    @causes = Cause.all
+    @actions = Action.all
   end
 end

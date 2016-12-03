@@ -95,9 +95,16 @@ a {
      }
     }
 }
-
+/****************************************
+FLASH MESSAGES
+*****************************************/
 .success {
     background: #b3ffd9;
+    width: 80%;
+    border-radius: 3px;
+}
+.error {
+    background: #ff4d4d;
     width: 80%;
     border-radius: 3px;
 }
