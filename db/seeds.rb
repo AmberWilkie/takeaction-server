@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Cause.delete_all
+Action.delete_all
+Article.delete_all
+
 
 cause1 = Cause.create(name: 'Poverty')
 cause2 = Cause.create(name: 'Global Warming')

@@ -8,6 +8,10 @@ class Api::V1::ArticlesController < ActionController::Base
       @items = Article.all.limit(20)
     end
     # Here we would put in all kinds of other search things so we could winnow down by peoples' interests. The search information should be available to us in params (and created by the front-end client in their request.)
-    render json: @items
+  end
+
+  def actions
+    @article = Article.find(params[:id].to_i)
+    render :actions
   end
 end
