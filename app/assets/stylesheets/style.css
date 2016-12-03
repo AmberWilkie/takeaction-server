@@ -111,29 +111,40 @@ FLASH MESSAGES
 /****************************************
 FORMS
 *****************************************/
+form {
+    font-size: 110%;
+}
+
 select {
     width: 100%;
     padding: 16px 20px;
     border: none;
     border-radius: 4px;
     background-color: #f1f1f1;
+    font-size: 90%;
+
 }
 textarea {
     width: 50%;
     height: 150px;
-    padding: 12px 20px;
+    padding: 6px 10px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+    font-size: 90%;
+
 }
 input {
+    min-width: 50%;
+    min-height: 30px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
     padding-left: 5px;
+    font-size: 90%;
 }
 .button {
     background-color: #ff9012;
@@ -152,5 +163,19 @@ select {
     margin-top:1em;
     margin-bottom:1em;
     width: 40%;
+    font-size: 90%;
+}
+
+.submit_button {
+    background-color: #004d4d;
+    color: #ffffff;
+    height: 50px;
+    font-size: 110%;
+}
+.space {
+    margin: 10px;
+}
+
+.checkboxes {
     font-size: 90%;
 }
