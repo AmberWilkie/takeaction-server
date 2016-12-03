@@ -1,21 +1,27 @@
 <h2>Edit your item.</h2>
 
 <div class='create_form'>
-  <%= form_for @article, url: {action: 'create'} do |f| %>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %><br>
-      <%= f.label :body %><br>
-      <%= f.text_area :body, size: "60x12" %><br>
-      <%= f.label :link %><br>
-      <%= f.text_field :link %><br>
-      <%= f.label :causes %><br>
+  <%= form_for @article, url: {action: 'create'}, class: 'space' do |f| %>
+      <%= f.label :title, class: 'space'%><br>
+      <%= f.text_field :title, required: true, class: 'space' %><br>
+      <%= f.label :body, class: 'space' %><br>
+      <%= f.text_area :body, size: "60x12", class: 'space' %><br>
+      <%= f.label :link, class: 'space' %><br>
+      <%= f.text_field :link, value: @article.link || 'http://www.', class: 'space' %><br>
+      <%= f.label :date, class: 'space' %><br>
+      <%= f.text_field :date, placeholder: "mm/dd/yyyy", class: 'space' %><br>
+      <%= f.label :location, class: 'space' %><br>
+      <%= f.text_field :location, class: 'space' %><br>
+      <%= f.label :causes, class: 'space' %><br>
       <% options = options_from_collection_for_select(@causes, 'id', 'name', 1) %>
-      <%= f.select :cause,  options, class: 'dropdown' %><br>
-      <%= f.label :suggested_actions %><br>
-      <!--<%= f.collection_check_boxes(:action_ids, @actions, :id, :name) do |b| %>-->
-          <%= b.check_box + b.label %><br>
-      <!--<% end %>-->
+      <div class="space"><%= f.select :cause,  options, class: 'dropdown space' %></div>
+      <%= f.label :suggested_actions, class: 'space' %><br>
+      <%= f.collection_check_boxes(:action_ids, @actions, :id, :name) do |b| %>
+          <div class="space checkboxes">
+            <%= b.check_box + b.label %>
+          </div>
+      <% end %>
       <%= hidden_field_tag :article_id, value= @article.id %>
-      <%= f.submit "Edit" %>
+      <%= f.submit "Edit", class: 'submit_button' %>
   <% end %>
 </div>
