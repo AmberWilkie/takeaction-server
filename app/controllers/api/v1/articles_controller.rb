@@ -2,7 +2,7 @@ class Api::V1::ArticlesController < ActionController::Base
 
   def index
     unless params[:cause].nil?
-      cause = Cause.find_by(name: params[:cause].capitalize)
+      cause = Cause.find_by(name: params[:cause].titleize)
       @items = Article.where(cause: cause)
     else
       @items = Article.all.limit(20)
