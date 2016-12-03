@@ -1,5 +1,9 @@
-class Api::V1::ArticlesController < ApplicationController
+class Api::V1::ArticlesController < ActionController::Base
+
   def index
-    render json: {message: 'API message', params: params}
+    cause = Cause.find_by(name: params[:cause])
+    @items = Article.where(cause: cause)
+    # Here we would put in all kinds of other search things so we could winnow down by peoples' interests.
+    render json: @items
   end
 end
