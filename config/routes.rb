@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resource :articles, controller: :articles, only: [:new, :create, :update, :show]
+  resource :articles, controller: :articles, only: [:new, :create, :update, :show, :edit]
+
+  namespace :articles do
+    resource :action_items, controller: :action_items, only: [:edit, :show, :update]
+  end
 
   root to: 'articles#new'
 

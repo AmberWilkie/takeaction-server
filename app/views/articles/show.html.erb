@@ -4,18 +4,30 @@
 <p>
   <%= @article.body %>
 </p>
-<p>
-  <%= link_to @article.link, @article.link %>
-</p>
+<% unless @article.link.blank? || @article.link == 'http://www.' %>
+    <p>
+      <%= link_to @article.link, @article.link %>
+    </p>
+<% end %>
 <p>
   <%= @article.cause.name %>
 </p>
 <p>
-  <%= @article.date %>
+  <%= @article.date.strftime('%d %A %Y %H:00') %>
 </p>
 <p>
   <%= @article.location %>
 </p>
 <p>
-  <%= @article.category %>
+  Type of item: <%= @article.category %>
 </p>
+<p>
+  <%= link_to 'Edit Item', edit_articles_path(@article) %>
+</p>
+<h3>
+  Edit Actions
+</h3>
+<% @article.action_items.each do |item| %>
+  <%= link_to item.action.name, edit_articles_action_items_path(item) %><br>
+<% end %>
+<button class="submit_button button space">Publish to Users</button>

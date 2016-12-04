@@ -30,6 +30,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = Article.find(params[:format])
+  end
+
   def update
     @article = Article.find(params[:article_id].to_i)
     @article.update(article_params)
@@ -37,7 +41,7 @@ class ArticlesController < ApplicationController
     if @article.save
       flash[:success] = 'Your item was updated.'
       gather_form_items
-      render :edit
+      render :show
     end
   end
 

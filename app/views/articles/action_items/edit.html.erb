@@ -1,0 +1,16 @@
+<h2>Provide additional info for your suggested action to <%= @action_item.action.name %> about <%=@action_item.article.title %></h2>
+
+<div class='create_form'>
+  <%= form_for @action_item, url: {action: 'update'}, class: 'space' do |f| %>
+      <%= f.label :email, class: 'space'%><br>
+      <%= f.email_field :email, class: 'space' %><br>
+      <%= f.label :phone, class: 'space' %><br>
+      <%= f.telephone_field :phone, size: "60x12", class: 'space' %><br>
+      <%= f.label :link, class: 'space' %><br>
+      <%= f.url_field :link, value: @action_item.link || 'http://www.', class: 'space' %><br>
+      <%= f.label :info, class: 'space' %><br>
+      <%= f.text_area :info, class: 'space' %><br>
+      <%= hidden_field_tag :action_item_id, value= @action_item.id %>
+      <%= f.submit "Save", class: 'submit_button space' %>
+  <% end %>
+</div>
