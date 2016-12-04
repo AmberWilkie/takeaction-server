@@ -34,7 +34,7 @@ article1 = Article.create(title: 'Some people have way more money than other peo
 article1.action_items.create(action_id: action1.id, link: 'http://www.twitter.com', phone: '0890247912', email:'inequality@inequality.com', info: 'Fight inequality by making companies pay for their unfair actions against the poor.')
 article1.action_items.create(action_id: action5.id, email: 'legislator@riksdagen.se', info: 'Sample email: Dear legislator, It would be so great if you could not vote for this terrible bill coming up.')
 
-article2 = Article.create(title: "It's pretty seriously unfair how rich some people are", body: "It's cool when they work hard and give back and everything, obviously. But plenty of people are getting rich by <i>making</i> other people poor and that really sucks.", link: 'http://www.killtherich.com', cause: cause1, category: 'article')
+article2 = Article.create(title: "It's pretty seriously unfair how rich some people are", body: "It's cool when they work hard and give back and everything, obviously. But plenty of people are getting rich by making other people poor and that really sucks.", link: 'http://www.killtherich.com', cause: cause1, category: 'article')
 article2.action_items.create(action_id: action1.id, link:'http://www.twitter.com')
 
 article3 = Article.create(title: 'Demonstration against Inequality!', body: 'Gather at Ideon', link: 'http://www.equality.org', location: 'Ideon Headquarters, Lund, Sweden', date: '12/12/16', cause: cause1, category: 'event', date: 'December 14, 2016 1pm')
