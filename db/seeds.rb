@@ -30,9 +30,9 @@ action5 = Action.create(name: 'Email your legislator')
 action6 = Action.create(name: 'Join this Event')
 action7 = Action.create(name: 'Donate')
 
-article1 = Article.create(title: 'Some people have way more money than other people', body: 'And that kinda sucks.', link: 'http://www.equality.org', cause: cause1)
+article1 = Article.create(title: 'Some people have way more money than other people', body: 'And that kinda sucks.', link: 'http://www.equality.org', cause: cause1, category: 'event', date: 'January 12, 2017 11am')
 article1.action_items.create(action_id: action1.id, link: 'http://www.twitter.com', phone: '0890247912', email:'inequality@inequality.com', info: 'Fight inequality by making companies pay for their unfair actions against the poor.')
-article1.action_items.create(action_id: action5.id, email: 'legislator@riksdagen.se', info: 'Sample email: Dear legislator, It would be so great if you could not vote for this terrible bill coming up.', category: 'event', date: 'January 12, 2017 11am')
+article1.action_items.create(action_id: action5.id, email: 'legislator@riksdagen.se', info: 'Sample email: Dear legislator, It would be so great if you could not vote for this terrible bill coming up.')
 
 article2 = Article.create(title: "It's pretty seriously unfair how rich some people are", body: "It's cool when they work hard and give back and everything, obviously. But plenty of people are getting rich by <i>making</i> other people poor and that really sucks.", link: 'http://www.killtherich.com', cause: cause1, category: 'article')
 article2.action_items.create(action_id: action1.id, link:'http://www.twitter.com')
