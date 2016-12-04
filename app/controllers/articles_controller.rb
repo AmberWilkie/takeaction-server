@@ -5,6 +5,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def create
     @article = Article.new(article_params)
     @article.cause = Cause.find(params[:article][:cause].to_i)
@@ -40,11 +44,12 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :link, :date, :location)
+    params.require(:article).permit(:title, :body, :link, :date, :location, :category)
   end
 
   def gather_form_items
     @causes = Cause.all
     @actions = Action.all
+    @categories = %w('event', 'article')
   end
 end

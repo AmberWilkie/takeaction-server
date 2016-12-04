@@ -12,6 +12,8 @@
       <%= f.text_field :date, placeholder: "mm/dd/yyyy", class: 'space' %><br>
       <%= f.label :location, class: 'space' %><br>
       <%= f.text_field :location, class: 'space' %><br>
+      <%= f.label :category, class: 'space' %><br>
+      <div class="space"><%= f.select :category,  ['Event', 'Article'], class: 'dropdown space' %></div>
       <%= f.label :causes, class: 'space' %><br>
       <% options = options_from_collection_for_select(@causes, 'id', 'name', 1) %>
       <div class="space"><%= f.select :cause,  options, class: 'dropdown space' %></div>
